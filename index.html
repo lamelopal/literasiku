@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>Home Screen</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
@@ -238,7 +240,7 @@
                 </div>
             </section>
 
-            <section class="mt-24">
+            <section data-aos="fade-up" data-aos-anchor-placement="top-center" class="mt-24">
                 <div class=" mx-auto">
                     <h2 class="text-3xl font-bold text-center mb-10">Statistik Penggunaan Internet di
                         Indonesia
@@ -304,7 +306,7 @@
                 </div>
             </section>
 
-            <section class="mt-24 bg-white">
+            <section data-aos="fade-up" data-aos-anchor-placement="top-center" class="mt-24 bg-white">
                 <div class=" mx-auto">
                     <h2 class="text-3xl font-bold text-center mb-10">Tips dan Panduan Praktis</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -376,9 +378,8 @@
             </section>
 
             <section class="mt-24">
-                <div class=" mx-auto">
+                <div class="mx-auto">
                     <h2 class="text-3xl font-bold text-center mb-10">Konten LiterasiKu untuk Remaja & Pelajar</h2>
-
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div
                             class="teens-card rounded-lg overflow-hidden shadow-lg transition-all border-2 border-neutral-900 duration-300 card-hover">
@@ -508,11 +509,14 @@
     <section class="gradient-bg text-white py-16 px-4 sm:px-6 lg:px-8 border-b-2 border-neutral-900">
         <div class=" mx-auto text-center">
             <h2 class="text-3xl font-bold mb-6">Jadilah Bagian dari Gerakan Literasi Digital</h2>
-            <p class="text-xl max-w-3xl mx-auto mb-8">Bersama LiterasiKu, mari bangun ekosistem digital yang cerdas, aman, dan bermanfaat untuk semua!</p>
+            <p class="text-xl max-w-3xl mx-auto mb-8">Bersama LiterasiKu, mari bangun ekosistem digital yang cerdas,
+                aman, dan bermanfaat untuk semua!</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#contact" class="relative inline-block px-5 py-4 font-medium group">
-                    <span class="absolute inset-0 w-full h-full transition duration-300 ease-out transform translate-x-1 translate-y-1 bg-neutral-800 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
-                    <span class="absolute inset-0 w-full h-full bg-white border-2 border-neutral-800 group-hover:bg-neutral-800"></span>
+                    <span
+                        class="absolute inset-0 w-full h-full transition duration-300 ease-out transform translate-x-1 translate-y-1 bg-neutral-800 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                    <span
+                        class="absolute inset-0 w-full h-full bg-white border-2 border-neutral-800 group-hover:bg-neutral-800"></span>
                     <span class="relative text-black group-hover:text-white">Bergabung Sekarang</span>
                 </a>
             </div>
@@ -521,7 +525,7 @@
 
     <div id="sumber-informasi" class="w-full flex justify-center items-center border-b-2 border-neutral-900">
         <div class="w-[80%] md:my-20 my-5 md:mb-20 mb-14">
-            <div id="card-article-1" class="md:flex hidden md:flex-row flex-col md:gap-20 gap-10">
+            <div data-aos="fade-right" id="card-article-1" class="md:flex hidden md:flex-row flex-col md:gap-20 gap-10">
                 <div class="md:w-1/2 w-full flex justify-center items-center">
                     <div class="flex flex-col justify-start items-start">
                         <p class="text-4xl font-semibold">Ciri-ciri Informasi <span class="text-red-500">Hoaks</span>
@@ -545,7 +549,8 @@
                     </div>
                 </div>
             </div>
-            <div id="card-article-2" class="flex md:flex-row flex-col md:gap-20 gap-5 md:mt-24 mt-10">
+            <div data-aos="fade-left" id="card-article-2"
+                class="flex md:flex-row flex-col md:gap-20 gap-5 md:mt-24 mt-10">
                 <div class="md:w-1/2 w-full">
                     <div class="border-2 border-neutral-900 rounded-xl shadow-xl">
                         <img class="rounded-[10px]"
@@ -570,7 +575,8 @@
                     </div>
                 </div>
             </div>
-            <div id="card-article-3" class="md:hidden flex md:flex-row flex-col md:gap-20 gap-5 md:mt-24 mt-20">
+            <div data-aos="fade-right" id="card-article-3"
+                class="md:hidden flex md:flex-row flex-col md:gap-20 gap-5 md:mt-24 mt-20">
                 <div class="md:w-1/2 w-full">
                     <div class="border-2 border-neutral-900 rounded-xl shadow-xl">
                         <img class="rounded-[10px]"
@@ -716,7 +722,7 @@
             <div class="md:flex md:justify-between">
                 <div class="mb-6 md:mb-0">
                     <a href="#" class="flex items-center">
-                        <img src="assets/logo.png" class="h-8 me-3"/>
+                        <img src="assets/logo.png" class="h-8 me-3" />
                         <span class="self-center text-2xl font-semibold whitespace-nowrap">LiterasiKu</span>
                     </a>
                 </div>
@@ -765,7 +771,12 @@
         </div>
     </footer>
 
+
+
     <script>
+        // Inisialisasi AOS
+        AOS.init();
+        // Fungsi SweetAlert
         function showAlert() {
             Swal.fire({
                 title: "Mohon Maaf 🙏🏻",
