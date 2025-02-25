@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <title>Artikel Screen</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .marquee {
+            overflow: hidden;
+            background: #facc15;
+            white-space: nowrap;
+            padding: 15px 0;
+            position: relative;
+            width: 100%;
+        }
+
+        .marquee__inner {
+            display: flex;
+            gap: 100px;
+            animation: marquee 10s linear infinite;
+            min-width: 200%;
+        }
+
+        .marquee__inner span {
+            display: flex;
+            gap: 40px;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+
+<body class="text-neutral-900" style="font-family: 'Jost';">
+    <nav id="beranda" class="bg-white border-b-2 border-neutral-900">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center md:space-x-2 space-x-1 rtl:space-x-reverse">
+                <img src="assets/logo.png" class="h-9" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-[500] whitespace-nowrap">LiterasiKu</span>
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <a href="quiz.html" class="relative inline-block px-6 py-1.5 font-medium group">
+                    <span
+                        class="absolute inset-0 w-full h-full transition duration-300 ease-out transform translate-x-1 translate-y-1 bg-neutral-900 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                    <span
+                        class="absolute inset-0 w-full h-full bg-yellow-400 border-2 border-neutral-900 group-hover:bg-neutral-900"></span>
+                    <span class="relative text-neutral-900 group-hover:text-white">Quiz !</span>
+                </a>
+                <button data-collapse-toggle="navbar-cta" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-neutral-900 rounded-sm md:hidden hover:bg-gray-100 duration-200 focus:outline-none focus:ring-2 focus:ring-neutral-900"
+                    aria-controls="navbar-cta" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto" id="navbar-cta">
+                <ul
+                    class="flex flex-col md:flex-row font-semibold md:gap-10 py-4 px-3 gap-1 md:p-0 m-0 md:border-none border-2 border-neutral-900 md:mt-0 mt-5 rounded-md">
+                    <li>
+                        <a href="index.html#beranda"
+                            class="block py-2 px-3 text-left md:p-0 rounded-sm hover:bg-yellow-500 md:hover:bg-transparent md:hover:scale-105 md:hover:text-yellow-600 duration-200">Beranda</a>
+                    </li>
+                    <li>
+                        <a href="index.html#sumber-informasi"
+                            class="block py-2 px-3 text-left md:p-0 rounded-sm hover:bg-yellow-500 md:hover:bg-transparent md:hover:scale-105 md:hover:text-yellow-600 duration-200">Blog
+                            & Artikel</a>
+                    </li>
+                    <li>
+                        <a href="index.html#tentang-kami"
+                            class="block py-2 px-3 text-left md:p-0 rounded-sm hover:bg-yellow-500 md:hover:bg-transparent md:hover:scale-105 md:hover:text-yellow-600 duration-200">Tentang
+                            Kami</a>
+                    </li>
+                    <li>
+                        <a href="index.html#contact"
+                            class="block py-2 px-3 text-left md:p-0 rounded-sm hover:bg-yellow-500 md:hover:bg-transparent md:hover:scale-105 md:hover:text-yellow-600 duration-200">Kontak
+                            Kami</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="w-full flex justify-center items-center my-10">
+        <div class="w-[80%]">
+            <section class="w-full">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-10">
+                    5 Tips Menjaga Keamanan Digital Agar Tidak Menjadi Korban
+                    Kejahatan Digital </h2>
+                <img src="https://images.unsplash.com/photo-1585559604959-6388fe69c92a?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    class="w-full h-[30rem] border-4 border-neutral-900 object-cover rounded-lg shadow-md">
+                <div class="text-lg mt-10 space-y-5">
+                    <p>
+                        (Siberkreasi, 10/06/2024) Saat ini, kejahatan tidak hanya dilakukan di dunia nyata saja, melainkan di dunia digital juga sudah banyak motif-motif kejahatan dan penipuan. Mengetahui beberapa tips menjaga keamanan digital merupakan salah satu langkah cerdas untuk meminimalisir terjadinya kejahatan digital.
+                    </p>
+                    <p>
+                        Sebenarnya, untuk menjaga keamanan digital tidaklah sulit, kamu hanya perlu ketelitian ketika mengakses digital. Mulai dari membuka akun media sosial hingga bertransaksi secara digital, pastikan teliti dan hati-hati. Teliti bisa dengan memastikan bahwa aplikasi yang digunakan benar-benar aplikasi resmi. Atau hati-hati ketika mendapat kiriman link atau informasi yang belum jelas kebenarannya.
+                    </p>
+                    <p>
+                        Untuk lebih jelasnya, berikut ini adalah beberapa Tips menjaga keamanan digital agar tidak menjadi korban kejahatan digital:
+                    </p>
+                    <p class="text-xl font-semibold">
+                        1. Tidak Sembarang Membuka Link
+                    </p>
+                    <p>
+                        Link dapat menjadi jembatan bagi serangan malware atau phishing. Oleh karena itu, pastikan kamu tidak membuka link yang dikirim oleh sumber yang tidak dikenal atau tidak terpercaya. Selalu periksa URL sebelum mengkliknya, dan hindari mengklik link yang mencurigakan atau terlalu menggoda.
+                    </p>
+                    <p class="text-xl font-semibold">
+                        2. Tidak Sembarang Menginstal Aplikasi
+                    </p>
+                    <p>
+                        Menginstal aplikasi dari sumber yang tidak resmi atau tidak terpercaya dapat membuka peluang bagi malware atau virus untuk masuk ke perangkat milikmu. Pastikan kamu hanya mengunduh aplikasi dari toko aplikasi resmi seperti Google Play Store atau Apple App Store. Dan berhati-hatilah terhadap aplikasi yang meminta izin yang tidak masuk akal.
+                    </p>
+                    <p class="text-xl font-semibold">
+                        3. Gunakan Password yang Rumit
+                    </p>
+                    <p>
+                        Password yang rumit adalah salah satu benteng pertahanan terbaik dalam melindungi akun online milikmu. Hindari menggunakan kata-kata yang mudah ditebak atau informasi pribadi seperti tanggal lahir atau nama hewan peliharaan sebagai password. Sebaliknya, gunakan kombinasi huruf besar dan kecil, angka, dan simbol untuk membuat password yang kuat dan sulit ditebak. 
+                    </p>
+                    <p class="text-xl font-semibold">
+                        4. Ganti Password Secara Berkala
+                    </p>
+                    <p>
+                        Meskipun sudah membuat password yang kuat/rumit, kamu juuga harus mengganti password secara berkala. Tips menjaga keamanan digital yang satu ini membantu mengurangi risiko akun diretas karena ada kemungkinan password diketahui oleh pihak yang tidak bertanggung jawab. 
+                    </p>
+                    <p class="text-xl font-semibold">
+                        5. Login Media Sosial pada Aplikasi Resminya
+                    </p>
+                    <p>
+                        Terakhir, ketika kamu menggunakan media sosial, pastikan hanya login melalui aplikasi resmi yang disediakan oleh platform tersebut. Hindari login melalui tautan yang dikirim melalui email atau pesan teks, karena ini bisa jadi upaya phishing. 
+                    </p>
+                    <p>
+                        Demikianlah 5 tips menjaga keamanan digital agar tidak menjadi korban kejahatan digital. Dengan mempraktikkan kelima tips tersebut, kamu bisa mengantisipasi kejahatan digital.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer class="bg-white border-t-2 border-neutral-900">
+        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+            <div class="md:flex md:justify-between">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="flex items-center">
+                        <img src="assets/logo.png" class="h-8 me-3" alt="FlowBite Logo" />
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap">LiterasiKu</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Halaman</h2>
+                        <ul class="text-neutral-500 font-medium">
+                            <li class="mb-4">
+                                <a href="index.html#sumber-informasi" class="hover:underline">Blog & Artikel</a>
+                            </li>
+                            <li>
+                                <a href="index.html#tentang-kami" class="hover:underline">Tentang Kami</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Follow Kami</h2>
+                        <ul class="text-neutral-500 font-medium">
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline ">Instagram</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline">LinkedIn</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Legal</h2>
+                        <ul class="text-neutral-500 font-medium">
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <span class="text-sm text-neutral-500 sm:text-center">© 2025 <a href="#"
+                        class="hover:underline">LiterasiKu™</a>. All Rights Reserved.
+                </span>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</body>
+
+</html>

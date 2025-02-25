@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <title>Home Screen</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .marquee {
+            overflow: hidden;
+            background: #facc15;
+            white-space: nowrap;
+            padding: 40px 0;
+            position: relative;
+            width: 100%;
+        }
+
+        .marquee__inner {
+            display: flex;
+            gap: 100px;
+            animation: marquee 10s linear infinite;
+            min-width: 200%;
+        }
+
+        .marquee__inner span {
+            display: flex;
+            gap: 40px;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        .gradient-bg {
+            background: linear-gradient(90deg, #4338CA, #6366F1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #60A5FA, #3B82F6);
+        }
+
+        .infographic-card {
+            background: linear-gradient(135deg, #F59E0B, #FBBF24);
+        }
+
+        .case-study-card {
+            background: linear-gradient(135deg, #10B981, #34D399);
+        }
+
+        .tips-card {
+            background: linear-gradient(135deg, #EC4899, #F472B6);
+        }
+
+        .teens-card {
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+        }
+
+        .custom-swal {
+            border: 2px solid #171717;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="text-neutral-900" style="font-family: 'Jost';">
+    <nav id="beranda" class="bg-white border-b-2 shadow-md border-neutral-900">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center md:space-x-2 space-x-1 rtl:space-x-reverse">
+                <img src="assets/logo.png" class="h-9" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-[550] whitespace-nowrap">LiterasiKu</span>
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <a href="quiz.html" class="relative inline-block px-6 py-1.5 font-medium group">
+                    <span
+                        class="absolute inset-0 w-full h-full transition duration-300 ease-out transform translate-x-1 translate-y-1 bg-neutral-900 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                    <span
+                        class="absolute inset-0 w-full h-full bg-yellow-400 border-2 border-neutral-900 group-hover:bg-neutral-900"></span>
+                    <span class="relative text-neutral-900 group-hover:text-white">Quiz !</span>
+                </a>
+                <button data-collapse-toggle="navbar-cta" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-neutral-900 rounded-sm md:hidden hover:bg-gray-100 duration-300 focus:outline-none focus:ring-2 focus:ring-neutral-900"
+                    aria-controls="navbar-cta" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto" id="navbar-cta">
+                <ul
+                    class="flex flex-col md:flex-row font-semibold md:gap-10 py-4 px-3 gap-1 md:p-0 m-0 md:border-none border-2 border-neutral-900 md:mt-0 mt-5 rounded-md">
+                    <li>
+                        <a href="#beranda"
+                            class="block py-2 px-3 text-left md:p-0 rounded-sm hover:bg-yellow-500 md:hover:bg-transparent md:hover:scale-105 md:hover:text-yellow-600 duration-300">Beranda</a>
+                    </li>
+                    <li>
+                        <a href="#sumber-informasi"
+                            class="block py-2 px-3 text-left md:p-0 rounded-sm hover:bg-yellow-500 md:hover:bg-transparent md:hover:scale-105 md:hover:text-yellow-600 duration-300">Blog
+                            & Artikel</a>
+                    </li>
+                    <li>
+                        <a href="#tentang-kami"
+                            class="block py-2 px-3 text-left md:p-0 rounded-sm hover:bg-yellow-500 md:hover:bg-transparent md:hover:scale-105 md:hover:text-yellow-600 duration-300">Tentang
+                            Kami</a>
+                    </li>
+                    <li>
+                        <a href="#contact"
+                            class="block py-2 px-3 text-left md:p-0 rounded-sm hover:bg-yellow-500 md:hover:bg-transparent md:hover:scale-105 md:hover:text-yellow-600 duration-300">Kontak
+                            Kami</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="w-full flex justify-center items-center bg-indigo-300 border-b-2 border-neutral-900">
+        <div class="w-[80%] md:my-20 my-10">
+            <div class="flex md:flex-row flex-col justify-center items-center">
+                <div class="md:w-[60%] w-full">
+                    <p class="md:text-5xl text-3xl font-[570] md:leading-[3.2rem] leading-tight">Mari Cerdas Bersama!
+                        Gunakan <br class="md:block hidden">Teknologi dengan
+                        Bijak, Kreatif, <br class="md:block hidden">dan Bertanggung Jawab.</p>
+                    <p class="mt-5 md:mr-40 mr-0 font-medium text-lg">Hanya dengan satu klik, kamu bisa belajar banyak
+                        tentang literasi
+                        digital dan teknologi! Akses dari mana saja, kapan saja.</p>
+                    <a href="#sumber-informasi" class="relative inline-block px-4 py-3 font-medium group mt-10">
+                        <span
+                            class="absolute inset-0 w-full h-full transition duration-300 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                        <span
+                            class="absolute inset-0 w-full h-full bg-blue-400 border-2 border-neutral-900 group-hover:bg-neutral-900"></span>
+                        <span class="relative text-black group-hover:text-white">Baca Artikel Kami</span>
+                    </a>
+                </div>
+                <div class="md:w-[40%] w-full md:mt-0 mt-10">
+                    <div class="border-4 border-neutral-900 rounded-xl md:h-[30rem] h-[20rem] shadow-xl">
+                        <img class="rounded-[9px] w-full h-full object-cover"
+                            src="https://cdn0-production-images-kly.akamaized.net/S9G-sY0VkoTYat7UuyZlMCuHD40=/1200x900/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/4040919/original/069243700_1654183958-Anak_Bermain_HP.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full flex justify-center items-center border-b-2 border-neutral-900">
+        <div class="w-[100%] flex flex-col justify-center items-center my-8">
+            <p class="text-2xl font-semibold">Sumber Informasi:</p>
+            <div class="marquee mt-5">
+                <div class="marquee__inner">
+                    <span class="font-medium">Kominfo</span>
+                    <span class="font-medium">Siberkreasi</span>
+                    <span class="font-medium">BSSN</span>
+                    <span class="font-medium">Kemendikbud</span>
+                    <span class="font-medium">CNN Indonesia</span>
+                    <span class="font-medium">Detik Inet</span>
+                    <span class="font-medium">Kominfo</span>
+                    <span class="font-medium">Siberkreasi</span>
+                    <span class="font-medium">BSSN</span>
+                    <span class="font-medium">Kemendikbud</span>
+                    <span class="font-medium">CNN Indonesia</span>
+                    <span class="font-medium">Detik Inet</span>
+                    <span class="font-medium">Kominfo</span>
+                    <span class="font-medium">Siberkreasi</span>
+                    <span class="font-medium">BSSN</span>
+                    <span class="font-medium">Kemendikbud</span>
+                    <span class="font-medium">CNN Indonesia</span>
+                    <span class="font-medium">Detik Inet</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full flex justify-center items-center">
+        <div class="w-[80%] md:my-20 my-10">
+            <section class="bg-white">
+                <div class=" mx-auto">
+                    <div class="lg:flex items-center justify-center gap-12">
+                        <div class="lg:w-1/2 mb-10 lg:mb-0">
+                            <h2 class="text-3xl font-bold mb-6">Apa itu Literasi Digital?</h2>
+                            <p class=" text-lg mb-4">
+                                Literasi digital adalah kemampuan untuk menggunakan teknologi informasi dan komunikasi
+                                untuk
+                                menemukan, mengevaluasi, membuat, dan mengomunikasikan informasi, yang memerlukan
+                                keterampilan
+                                kognitif dan teknis.
+                            </p>
+                            <p class=" text-lg mb-4">
+                                Di era digital saat ini, literasi digital menjadi keterampilan esensial yang
+                                memungkinkan kita
+                                untuk:
+                            </p>
+                            <ul class="list-disc pl-6  space-y-2">
+                                <li>Mengakses informasi secara efektif dan efisien</li>
+                                <li>Menganalisis dan mengevaluasi konten digital secara kritis</li>
+                                <li>Membuat konten digital dengan bertanggung jawab</li>
+                                <li>Berinteraksi dengan aman di dunia digital</li>
+                                <li>Memahami implikasi etis, hukum dan sosial dari teknologi digital</li>
+                            </ul>
+                        </div>
+                        <div class="lg:w-1/2">
+                            <div class="relative rounded-xl overflow-hidden shadow-2xl border-4 border-neutral-900">
+                                <img src="https://images.unsplash.com/photo-1507297230445-ff678f10b524?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    class="w-full md:h-[28rem] h-[20rem]">
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-indigo-900 to-transparent p-6">
+                                    <p class="text-white md:text-xl text-lg font-medium">Literasi digital adalah kunci
+                                        kesuksesan
+                                        di era
+                                        informasi</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-24">
+                <div class=" mx-auto">
+                    <h2 class="text-3xl font-bold text-center mb-10">Statistik Penggunaan Internet di
+                        Indonesia
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div
+                            class="stat-card rounded-lg p-6 text-white shadow-lg border-2 border-neutral-900 transition-all duration-300 card-hover">
+                            <h3 class="text-2xl font-bold mb-2">221,56 juta</h3>
+                            <p class="text-lg">Pengguna Internet di Indonesia per Oktober 2024</p>
+                            <div class="mt-4 flex items-center">
+                                <div class="h-2 w-full bg-blue-200 rounded-full">
+                                    <div class="h-2 bg-white rounded-full" style="width: 76%"></div>
+                                </div>
+                                <span class="ml-2 text-white font-semibold">79,5%</span>
+                            </div>
+                            <p class="mt-2 text-sm text-blue-100">dari total populasi Indonesia</p>
+                        </div>
+
+                        <div
+                            class="stat-card rounded-lg p-6 text-white shadow-lg border-2 border-neutral-900 transition-all duration-300 card-hover">
+                            <h3 class="text-2xl font-bold mb-2">5 Jam 45 Menit</h3>
+                            <p class="text-lg">Rata-rata waktu yang dihabiskan online setiap hari</p>
+                            <div class="mt-6 flex items-center justify-between">
+                                <div class="flex flex-col items-center">
+                                    <span class="text-lg font-bold">91%</span>
+                                    <span class="text-xs">Media Sosial</span>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <span class="text-lg font-bold">87%</span>
+                                    <span class="text-xs">Video Streaming</span>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <span class="text-lg font-bold">65%</span>
+                                    <span class="text-xs">Gaming</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="stat-card rounded-lg p-6 text-white shadow-lg border-2 border-neutral-900 transition-all duration-300 card-hover">
+                            <h3 class="text-2xl font-bold mb-2">97%</h3>
+                            <p class="text-lg">Akses internet melalui smartphone</p>
+                            <div class="grid grid-cols-3 gap-2 mt-4">
+                                <div class="bg-white bg-opacity-20 rounded p-2 text-center">
+                                    <p class="text-xs">WhatsApp</p>
+                                    <p class="font-bold">89%</p>
+                                </div>
+                                <div class="bg-white bg-opacity-20 rounded p-2 text-center">
+                                    <p class="text-xs">Instagram</p>
+                                    <p class="font-bold">84%</p>
+                                </div>
+                                <div class="bg-white bg-opacity-20 rounded p-2 text-center">
+                                    <p class="text-xs">TikTok</p>
+                                    <p class="font-bold">79%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-center text-gray-500 mt-6 text-sm">Sumber: Asosiasi Penyelenggara Jasa Internet
+                        Indonesia
+                        (APJII) & We Are Social, Oktober 2024</p>
+                </div>
+            </section>
+
+            <section class="mt-24 bg-white">
+                <div class=" mx-auto">
+                    <h2 class="text-3xl font-bold text-center mb-10">Tips dan Panduan Praktis</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div
+                            class="tips-card rounded-lg p-6 text-white shadow-lg border-2 border-neutral-900 transition-all duration-300 card-hover">
+                            <h3 class="text-xl font-bold mb-4">Cara Mengenali Berita Hoaks</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <span
+                                        class="flex-shrink-0 h-6 w-6 rounded-full bg-white text-pink-500 flex items-center justify-center font-bold mr-2">1</span>
+                                    <span>Periksa URL dan nama situs untuk memastikan keasliannya</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span
+                                        class="flex-shrink-0 h-6 w-6 rounded-full bg-white text-pink-500 flex items-center justify-center font-bold mr-2">2</span>
+                                    <span>Telusuri sumber berita asli dan bandingkan dengan beberapa sumber</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span
+                                        class="flex-shrink-0 h-6 w-6 rounded-full bg-white text-pink-500 flex items-center justify-center font-bold mr-2">3</span>
+                                    <span>Cek tanggal publikasi untuk memastikan berita masih relevan</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span
+                                        class="flex-shrink-0 h-6 w-6 rounded-full bg-white text-pink-500 flex items-center justify-center font-bold mr-2">4</span>
+                                    <span>Periksa bukti yang disajikan, seperti foto dan video</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span
+                                        class="flex-shrink-0 h-6 w-6 rounded-full bg-white text-pink-500 flex items-center justify-center font-bold mr-2">5</span>
+                                    <span>Waspadai judul sensasional yang memancing emosi</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div
+                            class="tips-card rounded-lg p-6 text-white shadow-lg border-2 border-neutral-900 transition-all duration-300 card-hover">
+                            <h3 class="text-xl font-bold mb-4">Menjaga Keamanan Digital</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <span
+                                        class="flex-shrink-0 h-6 w-6 rounded-full bg-white text-pink-500 flex items-center justify-center font-bold mr-2">1</span>
+                                    <span>Gunakan kata sandi yang kuat dan berbeda untuk setiap akun</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span
+                                        class="flex-shrink-0 h-6 w-6 rounded-full bg-white text-pink-500 flex items-center justify-center font-bold mr-2">2</span>
+                                    <span>Aktifkan autentikasi dua faktor untuk lapisan keamanan tambahan</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span
+                                        class="flex-shrink-0 h-6 w-6 rounded-full bg-white text-pink-500 flex items-center justify-center font-bold mr-2">3</span>
+                                    <span>Perbarui perangkat lunak dan aplikasi secara teratur</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span
+                                        class="flex-shrink-0 h-6 w-6 rounded-full bg-white text-pink-500 flex items-center justify-center font-bold mr-2">4</span>
+                                    <span>Hati-hati saat mengakses WiFi publik dan gunakan VPN</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span
+                                        class="flex-shrink-0 h-6 w-6 rounded-full bg-white text-pink-500 flex items-center justify-center font-bold mr-2">5</span>
+                                    <span>Jangan membagikan informasi pribadi secara sembarangan</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-24">
+                <div class=" mx-auto">
+                    <h2 class="text-3xl font-bold text-center mb-10">Konten LiterasiKu untuk Remaja & Pelajar</h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div
+                            class="teens-card rounded-lg overflow-hidden shadow-lg transition-all border-2 border-neutral-900 duration-300 card-hover">
+                            <div class="p-6 text-white">
+                                <h3 class="text-xl font-bold mb-4">Netizen Cerdas Challenge</h3>
+                                <p class="mb-4">
+                                    Tantangan online yang mengajak pelajar untuk membuat konten kreatif tentang
+                                    penggunaan
+                                    internet yang sehat dan bertanggung jawab.
+                                </p>
+                                <a href="javascript:void(0);" onclick="showAlert()"
+                                    class="relative inline-block px-4 py-2 font-medium group">
+                                    <span
+                                        class="absolute inset-0 w-full h-full transition duration-300 ease-out transform translate-x-1 translate-y-1 bg-neutral-800 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                                    <span
+                                        class="absolute inset-0 w-full h-full bg-white border-2 border-neutral-800 group-hover:bg-neutral-800"></span>
+                                    <span class="relative text-black group-hover:text-white">Ikuti Challenge</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div
+                            class="teens-card rounded-lg overflow-hidden shadow-lg transition-all border-2 border-neutral-900 duration-300 card-hover">
+                            <div class="p-6 text-white">
+                                <h3 class="text-xl font-bold mb-4">E-Module Literasi Digital</h3>
+                                <p class="mb-4">
+                                    Modul pembelajaran interaktif yang dirancang khusus untuk pelajar SMP dan SMA dengan
+                                    materi
+                                    yang relevan dengan kehidupan remaja.
+                                </p>
+                                <a href="javascript:void(0);" onclick="showAlert()"
+                                    class="relative inline-block px-4 py-2 font-medium group">
+                                    <span
+                                        class="absolute inset-0 w-full h-full transition duration-300 ease-out transform translate-x-1 translate-y-1 bg-neutral-800 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                                    <span
+                                        class="absolute inset-0 w-full h-full bg-white border-2 border-neutral-800 group-hover:bg-neutral-800"></span>
+                                    <span class="relative text-black group-hover:text-white">Akses Modul</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div
+                            class="teens-card rounded-lg overflow-hidden shadow-lg transition-all border-2 border-neutral-900 duration-300 card-hover">
+                            <div class="p-6 text-white">
+                                <h3 class="text-xl font-bold mb-4">Webinar Literasi Digital</h3>
+                                <p class="mb-4">
+                                    Seri webinar dengan pembicara muda yang inspiratif, membahas berbagai topik mulai
+                                    dari
+                                    cyberbullying hingga peluang karir di dunia digital.
+                                </p>
+                                <ahref="javascript:void(0);" onclick="showAlert()"
+                                    class="relative inline-block px-4 py-2 font-medium group">
+                                    <span
+                                        class="absolute inset-0 w-full h-full transition duration-300 ease-out transform translate-x-1 translate-y-1 bg-neutral-800 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                                    <span
+                                        class="absolute inset-0 w-full h-full bg-white border-2 border-neutral-800 group-hover:bg-neutral-800"></span>
+                                    <span class="relative text-black group-hover:text-white">Daftar Webinar</span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 bg-white rounded-xl shadow-lg p-6 border-2 border-neutral-900">
+                        <h3 class="text-xl font-bold text-indigo-800 mb-4">Testimoni Pelajar</h3>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="bg-neutral-100 rounded-lg p-4">
+                                <div class="flex items-center mb-3">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
+                                        <span class="text-indigo-800 font-bold">A</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium">Imam, 16 tahun</p>
+                                        <p class="text-sm text-gray-500">SMA Negeri 3 Jakarta</p>
+                                    </div>
+                                </div>
+                                <p class=" text-sm">
+                                    "Program literasi digital ini membantu saya lebih kritis dalam memilah informasi di
+                                    media
+                                    sosial. Saya juga belajar cara melindungi privasi saya di internet."
+                                </p>
+                            </div>
+
+                            <div class="bg-neutral-100 rounded-lg p-4">
+                                <div class="flex items-center mb-3">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
+                                        <span class="text-indigo-800 font-bold">R</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium">Firja, 15 tahun</p>
+                                        <p class="text-sm text-gray-500">SMP Negeri 5 Bandung</p>
+                                    </div>
+                                </div>
+                                <p class=" text-sm">
+                                    "Sejak mengikuti webinar tentang cyberbullying, saya jadi lebih aware tentang apa
+                                    yang saya
+                                    posting dan komentari di media sosial."
+                                </p>
+                            </div>
+
+                            <div class="bg-neutral-100 rounded-lg p-4">
+                                <div class="flex items-center mb-3">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
+                                        <span class="text-indigo-800 font-bold">N</span>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium">Jongskuy, 17 tahun</p>
+                                        <p class="text-sm text-gray-500">SMA Negeri 1 Surabaya</p>
+                                    </div>
+                                </div>
+                                <p class=" text-sm">
+                                    "Challenge dan konten-konten interaktif membuat belajar tentang literasi digital
+                                    jadi
+                                    menyenangkan! Saya bahkan membagikan ilmu ini ke teman-teman dan keluarga."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <section class="gradient-bg text-white py-16 px-4 sm:px-6 lg:px-8 border-b-2 border-neutral-900">
+        <div class=" mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Jadilah Bagian dari Gerakan Literasi Digital</h2>
+            <p class="text-xl max-w-3xl mx-auto mb-8">Bersama LiterasiKu, mari bangun ekosistem digital yang cerdas, aman, dan bermanfaat untuk semua!</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="relative inline-block px-5 py-4 font-medium group">
+                    <span class="absolute inset-0 w-full h-full transition duration-300 ease-out transform translate-x-1 translate-y-1 bg-neutral-800 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                    <span class="absolute inset-0 w-full h-full bg-white border-2 border-neutral-800 group-hover:bg-neutral-800"></span>
+                    <span class="relative text-black group-hover:text-white">Bergabung Sekarang</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="sumber-informasi" class="w-full flex justify-center items-center border-b-2 border-neutral-900">
+        <div class="w-[80%] md:my-20 my-5 md:mb-20 mb-14">
+            <div id="card-article-1" class="md:flex hidden md:flex-row flex-col md:gap-20 gap-10">
+                <div class="md:w-1/2 w-full flex justify-center items-center">
+                    <div class="flex flex-col justify-start items-start">
+                        <p class="text-4xl font-semibold">Ciri-ciri Informasi <span class="text-red-500">Hoaks</span>
+                            yang Harus Diwaspadai</p>
+                        <p class="mt-5 text-lg">Berikut ini adalah langkah-langkah yang dapat dilakukan untuk mengatasi
+                            serta mengenali informasi hoax agar kita tidak mudah tertipu dan dapat lebih bijak dalam
+                            menyaring berita di era digital.</p>
+                        <a href="artikel-satu.html" class="mt-10 relative inline-block px-4 py-3 font-medium group">
+                            <span
+                                class="absolute inset-0 w-full h-full transition duration-300 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                            <span
+                                class="absolute inset-0 w-full h-full bg-yellow-400 border-2 border-black group-hover:bg-black"></span>
+                            <span class="relative text-black group-hover:text-white">Baca Artikel Ini</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 w-full">
+                    <div class="border-2 border-neutral-900 rounded-xl shadow-xl">
+                        <img class="rounded-[10px]"
+                            src="https://dip.fisip.unair.ac.id/wp-content/uploads/2021/01/hoax.jpg">
+                    </div>
+                </div>
+            </div>
+            <div id="card-article-2" class="flex md:flex-row flex-col md:gap-20 gap-5 md:mt-24 mt-10">
+                <div class="md:w-1/2 w-full">
+                    <div class="border-2 border-neutral-900 rounded-xl shadow-xl">
+                        <img class="rounded-[10px]"
+                            src="https://images.unsplash.com/photo-1585559604959-6388fe69c92a?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    </div>
+                </div>
+                <div class="md:w-1/2 w-full flex justify-center items-center">
+                    <div class="flex flex-col justify-start items-start">
+                        <p class="text-4xl font-semibold">5 Tips Menjaga Keamanan Digital Agar Tidak Menjadi <span
+                                class="text-red-500">Korban</span>
+                            Kejahatan Digital</p>
+                        <p class="mt-5 text-lg">Berikut adalah beberapa tips penting yang dapat membantu kamu menjaga
+                            keamanan digital agar tetap aman dan terhindar dari berbagai ancaman kejahatan siber di
+                            dunia maya.</p>
+                        <a href="artikel-dua.html" class="mt-10 relative inline-block px-4 py-3 font-medium group">
+                            <span
+                                class="absolute inset-0 w-full h-full transition duration-300 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                            <span
+                                class="absolute inset-0 w-full h-full bg-yellow-400 border-2 border-black group-hover:bg-black"></span>
+                            <span class="relative text-black group-hover:text-white">Baca Artikel Ini</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="card-article-3" class="md:hidden flex md:flex-row flex-col md:gap-20 gap-5 md:mt-24 mt-20">
+                <div class="md:w-1/2 w-full">
+                    <div class="border-2 border-neutral-900 rounded-xl shadow-xl">
+                        <img class="rounded-[10px]"
+                            src="https://dip.fisip.unair.ac.id/wp-content/uploads/2021/01/hoax.jpg">
+                    </div>
+                </div>
+                <div class="md:w-1/2 w-full flex justify-center items-center">
+                    <div class="flex flex-col justify-start items-start">
+                        <p class="text-4xl font-semibold">Ciri-ciri Informasi <span class="text-red-500">Hoaks</span>
+                            yang Harus Diwaspadai</p>
+                        <p class="mt-5 text-lg">Berikut ini adalah langkah-langkah yang dapat dilakukan untuk mengatasi
+                            serta mengenali informasi hoax agar kita tidak mudah tertipu dan dapat lebih bijak dalam
+                            menyaring berita di era digital.</p>
+                        <a href="artikel-satu.html" class="mt-10 relative inline-block px-4 py-3 font-medium group">
+                            <span
+                                class="absolute inset-0 w-full h-full transition duration-300 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                            <span
+                                class="absolute inset-0 w-full h-full bg-yellow-400 border-2 border-black group-hover:bg-black"></span>
+                            <span class="relative text-black group-hover:text-white">Baca Artikel Ini</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="tentang-kami" class="w-full flex justify-center items-center bg-blue-300 border-b-2 border-neutral-900">
+        <div class="w-[80%] md:my-20 my-10">
+            <section id="tentang-kami" class="">
+                <div class="max-w-5xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold">Tentang Kami</h2>
+                    <p class="mt-4 text-lg">
+                        LiterasiKu adalah platform edukasi yang bertujuan untuk meningkatkan literasi digital masyarakat
+                        Indonesia.
+                        Kami hadir untuk membantu masyarakat memahami teknologi dengan lebih bijak, kreatif, dan
+                        bertanggung jawab.
+                    </p>
+                </div>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Box 1 -->
+                    <div class="bg-white border-2 border-neutral-900 p-6 rounded-lg shadow-md">
+                        <div class="h-24 mb-4">
+                            <img class="w-full h-full object-cover rounded-sm"
+                                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        </div>
+                        <h3 class="text-xl font-semibold">Visi & Misi</h3>
+                        <p class="mt-2">
+                            Mewujudkan masyarakat yang melek digital, mampu memilah informasi, serta menggunakan
+                            teknologi dengan positif dan produktif.
+                        </p>
+                    </div>
+                    <!-- Box 2 -->
+                    <div class="bg-white border-2 border-neutral-900 p-6 rounded-lg shadow-md">
+                        <div class="h-24 mb-4">
+                            <img class="w-full h-full object-cover rounded-sm"
+                                src="https://images.unsplash.com/photo-1686771416282-3888ddaf249b?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        </div>
+                        <h3 class="text-xl font-semibold">Sumber & Kerjasama</h3>
+                        <p class="mt-2">
+                            Kami bekerja sama dengan berbagai sumber terpercaya seperti <b>Kominfo, BSSN, Siberkreasi,
+                                CNN Indonesia, dan Detik Inet</b> dalam menyediakan informasi akurat dan bermanfaat.
+                        </p>
+                    </div>
+                    <!-- Box 3 -->
+                    <div class="bg-white border-2 border-neutral-900 p-6 rounded-lg shadow-md">
+                        <div class="h-24 mb-4">
+                            <img class="w-full h-full object-cover rounded-sm object-bottom"
+                                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=3568&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        </div>
+                        <h3 class="text-xl font-semibold">Tim Kami</h3>
+                        <p class="mt-2">
+                            LiterasiKu dikelola oleh tim profesional yang peduli dengan edukasi digital. Kami
+                            berkomitmen menyajikan konten berkualitas dan terpercaya.
+                        </p>
+                    </div>
+                    <!-- Box 4 -->
+                    <div class="bg-white border-2 border-neutral-900 p-6 rounded-lg shadow-md">
+                        <div class="h-24 mb-4">
+                            <img class="w-full h-full object-cover rounded-sm"
+                                src="https://images.unsplash.com/photo-1485770958101-9dd7e4ea6d93?q=80&w=3432&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        </div>
+                        <h3 class="text-xl font-semibold">Hubungi Kami</h3>
+                        <p class="mt-2">
+                            Jika ingin berkolaborasi atau memberikan saran, hubungi kami melalui <b>email atau media
+                                sosial</b> kami.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div id="contact" class="w-full flex justify-center items-center border-b-2 border-neutral-900">
+        <div class="w-[80%] md:my-20 my-10">
+            <div class="flex md:flex-row flex-col gap-12 justify-center items-center">
+                <div class="md:w-1/2 w-full">
+                    <div class="rounded-xl md:h-[30rem] h-[15rem]">
+                        <img class="w-full h-full object-cover object-right-top rounded-xl border-2 border-neutral-900 shadow-xl"
+                            src="https://images.unsplash.com/photo-1560264418-c4445382edbc?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    </div>
+                </div>
+                <div class="md:w-1/2 w-full">
+                    <div class="flex flex-col">
+                        <p class="text-3xl font-semibold">Contact us</p>
+                        <div>
+                            <label for="nama" class="block mt-3 font-medium">Nama</label>
+                            <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda"
+                                class="w-full mt-2 p-2 border border-neutral-900 rounded-md focus:ring-1 focus:ring-neutral-900">
+                        </div>
+                        <div>
+                            <label for="email" class="block mt-3 font-medium">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Masukkan email Anda"
+                                class="w-full mt-2 p-2 border border-neutral-900 rounded-md focus:ring-1 focus:ring-neutral-900">
+                        </div>
+                        <div>
+                            <label for="pesan" class="block mt-3 font-medium">Pesan</label>
+                            <textarea id="pesan" name="pesan" rows="5" placeholder="Tuliskan pesan Anda..."
+                                class="w-full mt-2 p-2 border border-neutral-900 rounded-md focus:ring-1 focus:ring-neutral-900"></textarea>
+                        </div>
+                        <a href="#"
+                            class="mt-5 relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-neutral-900 rounded-lg shadow-md group">
+                            <span
+                                class="absolute inset-0 flex items-center justify-center w-full h-full text-neutral-900 duration-500 -translate-x-full bg-yellow-500 group-hover:translate-x-0 ease">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </span>
+                            <span
+                                class="absolute flex items-center justify-center w-full h-full text-neutral-900 transition-all duration-500 transform group-hover:translate-x-full ease">Kirim
+                                Pesan</span>
+                            <span class="relative invisible">Kirim Pesan</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-white">
+        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+            <div class="md:flex md:justify-between">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="flex items-center">
+                        <img src="assets/logo.png" class="h-8 me-3"/>
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap">LiterasiKu</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Halaman</h2>
+                        <ul class="text-neutral-500 font-medium">
+                            <li class="mb-4">
+                                <a href="#sumber-informasi" class="hover:underline">Blog & Artikel</a>
+                            </li>
+                            <li>
+                                <a href="#tentang-kami" class="hover:underline">Tentang Kami</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Follow Kami</h2>
+                        <ul class="text-neutral-500 font-medium">
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline ">Instagram</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline">LinkedIn</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Legal</h2>
+                        <ul class="text-neutral-500 font-medium">
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <span class="text-sm text-neutral-500 sm:text-center">© 2025 <a href="#"
+                        class="hover:underline">LiterasiKu™</a>. All Rights Reserved.
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showAlert() {
+            Swal.fire({
+                title: "Mohon Maaf 🙏🏻",
+                text: "Saat ini konten belum tersedia.",
+                icon: "warning",
+                confirmButtonText: "Mengerti",
+                confirmButtonColor: "#3085d6",
+                background: "#fff",
+                color: "#333",
+                showCloseButton: false,
+                toast: false,
+                position: "center",
+                backdrop: `rgba(0,0,0,0.4)`,
+                customClass: {
+                    popup: "custom-swal"
+                }
+            });
+        }
+    </script>
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>
